@@ -3,4 +3,5 @@
 (defpackage #:quasirpg-tests
   (:use #:cl #:fiveam)
   (:export #:run!
-	   #:all-tests))
+	   #:all-tests
+	   #:test-quasi))
