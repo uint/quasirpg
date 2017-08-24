@@ -9,3 +9,9 @@
                (:file "quasirpg")))
 
 
+(asdf:defsystem #:quasirpg/tests
+  :depends-on (:quasirpg :fiveam)
+  :components ((:module "tests"
+			:serial t
+			:components ((:file "package")
+				     (:file "main")))))
