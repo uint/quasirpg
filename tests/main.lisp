@@ -10,7 +10,14 @@
 (defun test-quasi ()
   (run! 'all-tests))
 
-(test dummy-tests
-  "Just a placeholder."
-  (is (listp (list 1 2)))
-  (is (= 5 (+ 2 3))))
+(defun test-a-lot-of-dice ()
+  (every #'identity (loop for i from 1 to 100
+		       collecting (let ((result (quasirpg::roll-dice 2 10)))
+				    (and (>= result 2)
+					 (<= result 20))))))
+
+(test dice-tests
+  :description "Test the `roll-dice` function."
+  (is (= 1 (quasirpg::roll-dice 1 1)))
+  (is (= 3 (quasirpg::roll-dice 3 1)))
+  (is-true (test-a-lot-of-dice)))
