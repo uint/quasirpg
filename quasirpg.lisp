@@ -14,7 +14,7 @@
 
 (defun roll-dice (n sides &key (echo nil))
   "Roll N dice of SIDES sides."
-  (let ((result (loop for i from 1 to n summing (random sides))))
+  (let ((result (loop for i from 1 to n summing (1+ (random sides)))))
     (if echo (format t "Rolling ~ad~a! Result: ~a~%" n sides result))
     result))
 
