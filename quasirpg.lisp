@@ -14,6 +14,12 @@
 
 (defun roll-dice (n sides &key (echo nil))
   "Roll N dice of SIDES sides."
+  (if (< n 1)
+      (error 'simple-type-error
+	     :expected-type '(integer 1)
+	     :datum n
+	     :format-control "~@<Attempted to throw dice ~a times.~:>"
+	     :format-arguments (list n)))
   (let ((result (loop for i from 1 to n summing (1+ (random (floor sides))))))
     (if echo (format t "Rolling ~ad~a! Result: ~a~%" n sides result))
     result))
