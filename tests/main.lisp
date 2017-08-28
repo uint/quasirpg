@@ -20,4 +20,6 @@
   :description "Test the `roll-dice` function."
   (is (= 1 (quasirpg::roll-dice 1 1)))
   (is (= 3 (quasirpg::roll-dice 3 1)))
-  (is-true (test-a-lot-of-dice)))
+  (is-true (test-a-lot-of-dice))
+  (is (= 3 (quasirpg::roll-dice 3.8 1)))
+  (is (= 3 (quasirpg::roll-dice 3 1.9))))
