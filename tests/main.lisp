@@ -41,4 +41,5 @@
 (test make-character-tests
   :description "Test the `make-character` function."
   (let ((name (quasirpg::name (quasirpg::make-character "tom" '("str" "dex")))))
-    (is (string= "Tom" name))))
+    (is (string= "Tom" name)
+	"MAKE-CHARACTER should capitalize the name \"tom\", but we got: ~s" name)))
