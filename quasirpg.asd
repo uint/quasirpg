@@ -17,4 +17,6 @@
   :components ((:module "tests"
 			:serial t
 			:components ((:file "package")
-				     (:file "main")))))
+				     (:file "main")
+				     (:file "random-utils-tests")
+				     (:file "char-gen-tests")))))
