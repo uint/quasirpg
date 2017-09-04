@@ -37,3 +37,8 @@
     (signals simple-type-error (quasirpg::roll-dice valid-int invalid-int))
     (signals simple-type-error (quasirpg::roll-dice invalid-int valid-int))
     (signals simple-type-error (quasirpg::roll-dice invalid-int invalid-int2))))
+
+(test make-character-tests
+  :description "Test the `make-character` function."
+  (let ((name (quasirpg::name (quasirpg::make-character "tom" '("str" "dex")))))
+    (is (string= "Tom" name))))
