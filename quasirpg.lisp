@@ -45,6 +45,7 @@ is a list of two strings designating stats the player favors."
 	(favored favored))
     (unless name
       (setf name (prompt-read "Choose thy name")))
+    (setf name (string-capitalize name))
     (unless favored
       (setf favored (list (prompt-read "Choose a favored stat")
 			  (prompt-read "Choose another favored stat"))))
