@@ -14,6 +14,12 @@
 			 (min (1- most-negative-long-float)))
   (lambda () (+ min (random (1+ (- max min))))))
 
+(def-suite random-utils-tests
+    :description "Test the random utilities."
+    :in all-tests)
+
+(in-suite random-utils-tests)
+
 (test dice-tests
   :description "Test the `roll-dice` function."
   (is (= 1 (quasirpg::roll-dice 1 1)))
@@ -37,6 +43,12 @@
     (signals simple-type-error (quasirpg::roll-dice valid-int invalid-int))
     (signals simple-type-error (quasirpg::roll-dice invalid-int valid-int))
     (signals simple-type-error (quasirpg::roll-dice invalid-int invalid-int2))))
+
+(def-suite character-generation-tests
+    :description "Test the random utilities."
+    :in all-tests)
+
+(in-suite character-generation-tests)
 
 (test make-character-tests
   :description "Test the `make-character` function."
